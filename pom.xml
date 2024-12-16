@@ -20,21 +20,7 @@
     </properties>
 
     <dependencies>
-        <!-- Spring Boot Starter Web para controladores HTTP y servicios REST -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.7.8</version>
-        </dependency>
-
-        <!-- Jackson para procesar JSON -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.13.0</version>
-        </dependency>
-
-        <!-- Dependencia para pruebas unitarias con Spring Boot -->
+        <!-- Dependencia para Spring Boot Test (para pruebas de integración) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -42,54 +28,44 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Dependencia para JUnit 5 (para las pruebas unitarias) -->
+        <!-- Dependencia para JUnit 5 (ya está incluida, pero asegúrate de que esté configurado) -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.7.2</version> <!-- Versión de JUnit 5 -->
+            <version>5.7.2</version> <!-- JUnit 5 para pruebas unitarias -->
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.7.2</version> <!-- Versión de JUnit 5 -->
+            <version>5.7.2</version> <!-- JUnit 5 engine -->
             <scope>test</scope>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Plugin para empaquetar el proyecto como un JAR ejecutable -->
+            <!-- Plugin de Maven para Spring Boot (sin cambios, ya lo tienes) -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.7.8</version>
             </plugin>
 
-            <!-- Plugin de Maven Compiler para configurar Java 17 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-                    <source>17</source>
-                    <target>17</target>
-                </configuration>
-            </plugin>
-
-            <!-- Plugin para las pruebas de JUnit 5 -->
+            <!-- Plugin para ejecutar las pruebas (JUnit 5) -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
                 <configuration>
                     <includes>
-                        <include>**/*Tests.java</include>
+                        <include>**/*Tests.java</include>  <!-- Asegúrate de que los archivos de prueba terminen en "Tests.java" -->
                     </includes>
                     <testFailureIgnore>false</testFailureIgnore>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
 </project>

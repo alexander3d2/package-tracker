@@ -10,8 +10,8 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class PackageTrackingService {
 
-    private static final String API_KEY = "940f9a107bmshfa3d10548782356p1d7071jsn109baa8bddc8"; // Reemplaza con tu API Key
-    private static final String API_URL = "https://rapidapi.com/";
+    private static final String API_KEY = "tu-api-key-aqui"; // Reemplaza con tu API Key
+    private static final String API_URL = "https://api.aftership.com/v4/trackings/";
 
     public String trackPackage(String trackingNumber) {
         String url = API_URL + trackingNumber;

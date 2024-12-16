@@ -39,11 +39,6 @@ public class PackageTrackerApp {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
-    public class ClaseInutil {
-        // Esta clase no tiene ninguna funcionalidad
-    }
-
-
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {

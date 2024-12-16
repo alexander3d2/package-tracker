@@ -10,6 +10,7 @@ public class PackageTrackerApp {
     private JTextArea resultArea;
     private PackageTrackingService trackingService;
 
+    // Constructor que recibe el servicio de seguimiento de paquetes
     public PackageTrackerApp(PackageTrackingService trackingService) {
         this.trackingService = trackingService;
         JFrame frame = new JFrame("Rastreo de Paquetes");
@@ -39,15 +40,9 @@ public class PackageTrackerApp {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
+
+    // Esta clase "ClaseInutil" es innecesaria para el funcionamiento de la aplicación, pero la dejas como ejemplo.
     public class ClaseInutil {
         // Esta clase no tiene ninguna funcionalidad
-    }
-
-
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            PackageTrackerApp app = new PackageTrackerApp(new PackageTrackingService());
-        });
     }
 }

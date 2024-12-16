@@ -34,13 +34,6 @@
             <version>2.13.0</version>
         </dependency>
 
-        <!-- RestTemplate para hacer peticiones HTTP -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.7.8</version>
-        </dependency>
-
         <!-- Dependencia para pruebas unitarias con Spring Boot -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

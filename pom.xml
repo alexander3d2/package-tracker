@@ -5,67 +5,55 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>package-tracker</artifactId>
+    <artifactId>packageTracker</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>package-tracker</name>
-    <description>Aplicación de rastreo de paquetes utilizando la API de AfterShip</description>
-
     <properties>
-        <java.version>17</java.version>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>17</java.version> <!-- Actualizado a Java 17 -->
+        <spring.boot.version>2.7.5</spring.boot.version> <!-- Define la versión de Spring Boot -->
     </properties>
 
     <dependencies>
-        <!-- Dependencia para Spring Boot Test (para pruebas de integración) -->
+        <!-- Dependencia de Spring Boot Starter Web para crear una aplicación web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring.boot.version}</version> <!-- Usar la propiedad definida -->
+        </dependency>
+
+        <!-- Dependencia para pruebas unitarias con Spring Boot -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <version>2.7.8</version>
+            <version>${spring.boot.version}</version>
             <scope>test</scope>
         </dependency>
 
-        <!-- Dependencia para JUnit 5 (ya está incluida, pero asegúrate de que esté configurado) -->
+        <!-- Dependencia para TestNG -->
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.7.2</version> <!-- JUnit 5 para pruebas unitarias -->
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.5</version>
             <scope>test</scope>
         </dependency>
 
+        <!-- Dependencia de Swing para la GUI -->
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.7.2</version> <!-- JUnit 5 engine -->
-            <scope>test</scope>
+            <groupId>org.swinglabs</groupId>
+            <artifactId>swingx</artifactId>
+            <version>1.6.1</version>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Plugin de Maven para Spring Boot (sin cambios, ya lo tienes) -->
+            <!-- Plugin para Spring Boot -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.7.8</version>
-            </plugin>
-
-            <!-- Plugin para ejecutar las pruebas (JUnit 5) -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
-                <configuration>
-                    <includes>
-                        <include>**/*Tests.java</include>  <!-- Asegúrate de que los archivos de prueba terminen en "Tests.java" -->
-                    </includes>
-                    <testFailureIgnore>false</testFailureIgnore>
-                </configuration>
+                <version>${spring.boot.version}</version> <!-- Añadir la versión del plugin -->
             </plugin>
         </plugins>
     </build>
-
 </project>

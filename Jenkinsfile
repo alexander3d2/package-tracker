@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Ejecutar Aplicación de Escritorio') {
             steps {
-                bat 'java -jar target/package-tracker-1.0-SNAPSHOT.jar' // Usa bat para ejecutar el JAR en Windows
+                bat 'java -jar target/packageTracker-1.0-SNAPSHOT.jar' // Usa bat para ejecutar el JAR en Windows
             }
         }
     }
